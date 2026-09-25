@@ -1,6 +1,6 @@
-# Muon-OGD
+# OSD
 
-**Muon-OGD for LLM Continual Learning.**
+**OSD for LLM Continual Learning.**
 
 This repository contains training and evaluation scripts to run a **3-stage continual learning** pipeline on an instruction-tuned Llama model, with evaluations after each stage.
 
@@ -9,7 +9,7 @@ This repository contains training and evaluation scripts to run a **3-stage cont
   - **AdamW** (sequential SFT baseline)
   - **O-LoRA**
   - **Sculpting Subspace**
-  - **Muon-OGD**
+  - **OSD**
 - **Evaluation** is **vLLM-accelerated** (enabled by default) via `vllm_eval_backend.py`.
 
 ---
@@ -20,11 +20,11 @@ Key entrypoints at the repo root:
 
 - `llama-3B.sh` — unified runner for the full continual-learning pipeline (train + eval + summary aggregation)
 - `train_coding_bigcodebench_sft.py` — Stage A baseline training (SeqSFT/AdamW)
-- `train_coding_bigcodebench_muon_ogd.py` — Stage A Muon-OGD training
+- `train_coding_bigcodebench_OSD.py` — Stage A OSD training
 - `train_math_sft.py` — Stage B baseline training
-- `train_math_muon_ogd.py` — Stage B Muon-OGD training
+- `train_math_OSD.py` — Stage B OSD training
 - `train_medical_sft.py` — Stage C baseline training
-- `train_medical_muon_ogd.py` — Stage C Muon-OGD training
+- `train_medical_OSD.py` — Stage C OSD training
 - `vllm_eval_backend.py` — vLLM backend glue for evaluation scripts
 
 > Note: the `llama-3B.sh` runner expects additional scripts to exist (e.g. `eval_gsm8k.py`, `eval_medical.py`, `eval_bigcodebench_remote.py`, `train_math_sft_svd.py`). If they’re not in your checkout yet, the runner will exit with a “missing file” error.
@@ -190,7 +190,7 @@ The script saves logs under each run directory and writes JSON outputs for metri
 
 ## Citation / acknowledgment
 
-If you use Muon-OGD in academic work, consider adding a citation section here (paper / arXiv / bibtex).
+If you use OSD in academic work, consider adding a citation section here (paper / arXiv / bibtex).
 
 ---
 
